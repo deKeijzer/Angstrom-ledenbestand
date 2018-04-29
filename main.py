@@ -70,8 +70,21 @@ def export_gegevens(te_doorzoeken_kolom, is_gelijk_aan, exporteer_gegevens, best
 
 
 def nieuw_ledenbestand():
+    """
+    Per row in df loop schrijven die door gehele df_a gaat om op een match te controleren.
+
+    TODO
+
+    Zoek voornaam van df_a in df, noteer indices in lijst1 van df waar dit voorkomt.
+    Zoek tussenvoegsel van df_a in df, noteer indices in lijst2 van df waar dit voorkomt.
+    Zoek achterneem van df_a, noteer indices in lijst3 van df waar dit voorkomt.
+
+    Bevatten de drie lijsten allemaal een keer hetzelfde getal (index waarde van df)?
+    Zo ja, dan is er een match.
+    :return:
+    """
+    """
     df_a = pd.read_excel('origineel\\Angfo.xlsx')
-    df_naam = pd.DataFrame()
     df_a_naam = pd.DataFrame()
     global df
     df = df.fillna('')
@@ -91,6 +104,22 @@ def nieuw_ledenbestand():
 
     x = df_a_namen['naam'].str.contains(df_namen['naam'][0])
     print(x)
+    """
+
+def nieuw_ledenbestand():
+    """
+    Zoek voornaam van df_a in df, noteer indices in lijst1 van df waar dit voorkomt.
+    Zoek tussenvoegsel van df_a in df, noteer indices in lijst2 van df waar dit voorkomt.
+    Zoek achterneem van df_a, noteer indices in lijst3 van df waar dit voorkomt.
+
+    Bevatten de drie lijsten allemaal een keer hetzelfde getal (index waarde van df)?
+    Zo ja, dan is er een match.
+    :return:
+    """
+    df_a = pd.read_excel('origineel\\Angfo.xlsx')
+    to_drop = df_a.columns.difference(['voornaam', 'achternaam', 'tussenvoegsel'])
+    df_a.drop(to_drop, 1, inplace=True)  # drop alle columns behalve degene in to_drop
+    print(df_a)
 
 #export_gegevens('Vrouw', True,
 #                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats'],
