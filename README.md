@@ -3,6 +3,9 @@
 Dit is de Python code welke gebruikt voor het ledenbestand van Ångström.
 De code is [hier](notebook.ipynb) in de vorm van een Jupyter Notebook te vinden.
 Heb je geen Jupyter Notebook? Gebruik run dan [main.py](main.py).
-Het ledenbestand dient als 'Ledenbestand.xlsx' in de map 'input' te staan.
-De overige bestanden en mappen dienen als werkomgeving.
-Alles is gevoelig voor hoofdletters, verander dus niet zomaar kolomen van naam in het ledenbestand.
+
+# Gebruik
+Over het algemeen is het gebruik van de Jupyter Notebook niet nodig. Simpelweg het runnen van [main.py](main.py) met Python is voldoende. Zorg ervoor dat 'Ledenbestand.xlsx' in de map 'input' staat.
+De code is gevoelig voor hoofdletters, let hier op.
+Verander ook niet zomaar kolommen van naam in het ledenbestand.
+Na het runnen van [main.py](main.py) zullen de gegevens van de mensen die de Ångfo en nieuwsbrief willen ontvangen zijn geëxporteerd naar de map 'output'.
