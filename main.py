@@ -80,7 +80,6 @@ export_gegevens('Angfo', True,
                 ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'telefoon',
                  'email', 'geboortedatum', 'liddatum', 'lid status', 'IBAN', 'TN status', 'Opmerkingen', 'Bestuur',
                  'Klas', 'Studentnummer', 'Vrouw', 'Angfo', 'Nieuwsbrief'],
-
                 'output\\wilt_angfo_alles.xlsx')
 
 export_gegevens('Angfo', True,
