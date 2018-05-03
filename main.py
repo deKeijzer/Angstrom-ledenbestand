@@ -7,7 +7,7 @@ Executable met interface van maken?
 
 """
 global df
-df = pd.read_excel('origineel\\Ledenbestand.xlsx')
+df = pd.read_excel('input\\Ledenbestand.xlsx')
 
 
 def export_vrouwen():
@@ -68,59 +68,6 @@ def export_gegevens(te_doorzoeken_kolom, is_gelijk_aan, exporteer_gegevens, best
     df_angfo.to_excel(bestandsnaam, 'Sheet1')
     print('Het bestand is opgeslagen als: %s' % bestandsnaam)
 
-
-def nieuw_ledenbestand():
-    """
-    Per row in df loop schrijven die door gehele df_a gaat om op een match te controleren.
-
-    TODO
-
-    Zoek voornaam van df_a in df, noteer indices in lijst1 van df waar dit voorkomt.
-    Zoek tussenvoegsel van df_a in df, noteer indices in lijst2 van df waar dit voorkomt.
-    Zoek achterneem van df_a, noteer indices in lijst3 van df waar dit voorkomt.
-
-    Bevatten de drie lijsten allemaal een keer hetzelfde getal (index waarde van df)?
-    Zo ja, dan is er een match.
-    :return:
-    """
-    """
-    df_a = pd.read_excel('origineel\\Angfo.xlsx')
-    df_a_naam = pd.DataFrame()
-    global df
-    df = df.fillna('')
-
-    # (len(df_a['achternaam'].str.contains(df['achternaam'][i], na=False)) == 0)
-
-    #  Arrays met complete namen maken
-    naam_df = []
-    naam_df_a = []
-    for i in range(len(df)):
-        naam_df.append(str(df['voornaam'][i])+' '+str(df['tussenvoegsel'][i])+' '+str(df['achternaam'][i]))
-    for i in range(len(df_a)):
-        naam_df_a.append(str(df_a['voornaam'][i])+' '+str(df_a['tussenvoegsel'][i])+' '+str(df_a['achternaam'][i]))
-
-    df_namen = pd.DataFrame(naam_df, columns=['naam'])
-    df_a_namen = pd.DataFrame(naam_df_a, columns=['naam'])
-
-    x = df_a_namen['naam'].str.contains(df_namen['naam'][0])
-    print(x)
-    """
-
-def nieuw_ledenbestand():
-    """
-    Zoek voornaam van df_a in df, noteer indices in lijst1 van df waar dit voorkomt.
-    Zoek tussenvoegsel van df_a in df, noteer indices in lijst2 van df waar dit voorkomt.
-    Zoek achterneem van df_a, noteer indices in lijst3 van df waar dit voorkomt.
-
-    Bevatten de drie lijsten allemaal een keer hetzelfde getal (index waarde van df)?
-    Zo ja, dan is er een match.
-    :return:
-    """
-    df_a = pd.read_excel('origineel\\Angfo.xlsx')
-    to_drop = df_a.columns.difference(['voornaam', 'achternaam', 'tussenvoegsel'])
-    df_a.drop(to_drop, 1, inplace=True)  # drop alle columns behalve degene in to_drop
-    print(df_a)
-
 #export_gegevens('Vrouw', True,
 #                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats'],
 #                'output\\vrouwen_leden.xlsx')
@@ -129,4 +76,25 @@ def nieuw_ledenbestand():
 #                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'geboortedatum'],
 #                'output\\ere_leden.xlsx')
 
-nieuw_ledenbestand()
+export_gegevens('Angfo', True,
+                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'telefoon',
+                 'email', 'geboortedatum', 'liddatum', 'lid status', 'IBAN', 'TN status', 'Opmerkingen', 'Bestuur',
+                 'Klas', 'Studentnummer', 'Vrouw', 'Angfo', 'Nieuwsbrief'],
+
+                'output\\wilt_angfo_alles.xlsx')
+
+export_gegevens('Angfo', True,
+                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats',
+                 'lid status', 'Bestuur', 'Angfo', 'Nieuwsbrief'],
+                'output\\wilt_angfo_adres.xlsx')
+
+export_gegevens('Nieuwsbrief', True,
+                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'telefoon',
+                 'email', 'geboortedatum', 'liddatum', 'lid status', 'IBAN', 'TN status', 'Opmerkingen', 'Bestuur',
+                 'Klas', 'Studentnummer', 'Vrouw', 'Angfo', 'Nieuwsbrief'],
+                'output\\wilt_nieuwsbrief_alles.xlsx')
+
+export_gegevens('Nieuwsbrief', True,
+                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'email',
+                 'lid status', 'Bestuur', 'Angfo', 'Nieuwsbrief'],
+                'output\\wilt_nieuwsbrief_mail.xlsx')
