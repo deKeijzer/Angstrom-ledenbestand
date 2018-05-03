@@ -5,6 +5,7 @@ De code is [hier](notebook.ipynb) in de vorm van een Jupyter Notebook te vinden.
 Heb je geen Jupyter Notebook? Gebruik run dan [main.py](main.py).
 
 # Gebruik
+Gebruik de [groene download knop](https://github.com/deKeijzer/Angstrom-ledenbestand/archive/master.zip) om de code te downloaden. Laat alles in dezelfde map staan.
 Over het algemeen is het gebruik van de Jupyter Notebook niet nodig. Simpelweg het runnen van [main.py](main.py) met Python is voldoende. Zorg ervoor dat 'Ledenbestand.xlsx' in de map 'input' staat.
 De code is gevoelig voor hoofdletters, let hier op.
 Verander ook niet zomaar kolommen van naam in het ledenbestand.
