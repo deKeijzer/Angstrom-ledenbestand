@@ -9,3 +9,12 @@ Over het algemeen is het gebruik van de Jupyter Notebook niet nodig. Simpelweg h
 * De code is gevoelig voor hoofdletters, let hier op.
 Verander ook niet zomaar kolommen van naam in het ledenbestand.
 Na het runnen van [main.py](main.py) zullen de gegevens van de mensen die de Ångfo en nieuwsbrief willen ontvangen zijn geëxporteerd naar de map 'output'.
+
+# Extra informatie m.b.t. Jupyter Notebooks
+Sommige code zal in de vorm van een .py bestand zijn. Echter komen er ook [Jupyter Notebooks](http://jupyter.org) voor, daar waar dat handiger is. Lees [hier](http://jupyter.readthedocs.io/en/latest/install.html) hoe je Jupyter installeert op je computer. Een korte uitleg: \
+Installeer [Python3](https://www.python.org/). Open (op Windows) [CMD](https://en.wikipedia.org/wiki/Cmd.exe) als administrator (navigator? op macOS) en typ het volgende: \
+`pip3 install jupyter` \
+En voor bijvoorbeeld libraries: \
+`pip3 install pandas` \
+`pip3 install numpy` \
+Om de notebook de starten kan `jupyter notebook` getypt worden, of run het run_notebook.bat bestand in de folder van de betreffende notebook.

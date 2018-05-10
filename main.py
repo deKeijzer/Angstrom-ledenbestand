@@ -97,3 +97,8 @@ export_gegevens('Nieuwsbrief', True,
                 ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'email',
                  'lid status', 'Bestuur', 'Angfo', 'Nieuwsbrief'],
                 'output\\wilt_nieuwsbrief_mail.xlsx')
+
+export_gegevens('IBAN', '',
+                ['voornaam', 'tussenvoegsel', 'achternaam', 'straat', 'huisnummer', 'postcode', 'woonplaats', 'email',
+                 'lid status', 'Bestuur', 'Angfo', 'Nieuwsbrief'],
+                'output\\IBAN_NaN.xlsx')
